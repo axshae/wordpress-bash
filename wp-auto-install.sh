@@ -30,10 +30,10 @@ run_sql_commands(){
 }
 
 # php 7.1 wp 5.2.3 5.3
-sudo apt-get install software-properties-common
+sudo apt-get -y install software-properties-common
 sudo add-apt-repository ppa:ondrej/php
-sudo apt update
-sudo apt upgrade
+sudo apt -y update
+sudo apt -y upgrade
 
 echo "php version?"
 read vphp
@@ -54,15 +54,15 @@ echo "Site name?"
 read sitename
 
 echo "Installing php${vphp}.."
-sudo apt install php${vphp}-cli php${vphp}-fpm php${vphp}-mysql php${vphp}-json php${vphp}-opcache php${vphp}-mbstring php${vphp}-xml php${vphp}-gd php${vphp}-curl
+sudo apt -y install php${vphp}-cli php${vphp}-fpm php${vphp}-mysql php${vphp}-json php${vphp}-opcache php${vphp}-mbstring php${vphp}-xml php${vphp}-gd php${vphp}-curl
 echo -e "Php installed successfully!\n"
 
 echo "Installing nginx"
-sudo apt install nginx
+sudo apt -y install nginx
 echo "Nginx installed successfully!\n"
 
 echo "Installing mysql-server"
-sudo apt install mysql-server
+sudo apt -y install mysql-server
 echo "Mysql installed successfully!\n"
 
 default_dir=$PWD
@@ -75,7 +75,7 @@ wget https://wordpress.org/wordpress-$vwp.tar.gz
 tar -xzvf wordpress-$vwp.tar.gz
 
 sudo mkdir /var/www/html/$sitename
-sudo mv /tmp/wordpress-$vwp/* /var/www/html/$sitename
+sudo mv /tmp/wordpress/* /var/www/html/$sitename
 
 sudo chown -R www-data: /var/www/html/$sitename
 
@@ -97,6 +97,7 @@ sudo systemctl restart nginx
 
 echo -e "\nWordpress setup completed successfully!"
 
+#copy all creds and version in a text file and tell about that to user
 
 
 
