@@ -43,25 +43,25 @@ run_sql_commands(){
 # script start
 # 
 
-echo -e "\n\n1.) Which php version you want to intall?"
+echo -e "\n\n1.) Which php version you want to install? Example: 7.2"
 read vphp
 
-echo -e "\n2.) Which wordpress version you want to install?"
+echo -e "\n2.) Which wordpress version you want to install? Example: 5.3.2"
 read vwp
 
-echo -e "\n3.) Please enter your database name."
+echo -e "\n3.) Please enter your database name. Example: mywordpresdb"
 read dbname
 
-echo -e "\n4.) Please enter database username."
+echo -e "\n4.) Please enter database username. Example: amazingdbuser"
 read dbuname
 
-echo -e "\n5.) Please enter database password."
+echo -e "\n5.) Please enter database password. "
 read dbpwd
 
 echo -e "\n6.) Please enter your site domain name. Example: geekconsults.co.in "
 read sitename
 
-echo -e "\n\nPlease keep the above entered information safe and keep it handy as it will required during wordpress setup."
+echo -e "\n\nPlease keep the above entered information safe and keep it handy as it will be required during wordpress setup."
 
 print_version_info $vphp $vwp $dbname $dbuname $dbpwd $sitename
 
@@ -70,7 +70,7 @@ read -n 1 confirm_install
 
 #exit if not confirm installation
 if [[ "$confirm_install" != "y" ]]; then
-	echo "\n\nProgram Terminated..."
+	echo -e "\n\nProgram Terminated..."
 	exit 0
 fi
 
