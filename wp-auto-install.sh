@@ -61,7 +61,7 @@ read dbpwd
 echo -e "\n6.) Please enter your site domain name. Example: geekconsults.co.in "
 read sitename
 
-echo -e "\n\nPlease keep the above entered information handy and keep it handy as it will required during wordpress setup."
+echo -e "\n\nPlease keep the above entered information safe and keep it handy as it will required during wordpress setup."
 
 print_version_info $vphp $vwp $dbname $dbuname $dbpwd $sitename
 
@@ -69,7 +69,7 @@ echo -e "\n\nAre you sure you want to continue installation? y/n"
 read -n 1 confirm_install
 
 #exit if not confirm installation
-if [[ "$confirm_install" != "y" ]]
+if [[ "$confirm_install" != "y" ]]; then
 	echo "\n\nProgram Terminated..."
 	exit 0
 fi
