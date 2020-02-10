@@ -88,7 +88,7 @@ cd $default_dir
 cp nginx.conf /tmp/$sitename
 sed -i "s/domain.tld/$sitename/g" /tmp/$sitename
 sed -i "s/vphp/$vphp/g" /tmp/$sitename    
-sudo mv /tmp/$sitename /etc/ngix/sites-available/                                                      
+sudo mv /tmp/$sitename /etc/nginx/sites-available/                                                      
 # cd /etc/nginx/sites-available
 sudo ln -s /etc/nginx/sites-available/$sitename /etc/nginx/sites-enabled/
 
