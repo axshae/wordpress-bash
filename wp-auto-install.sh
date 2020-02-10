@@ -65,6 +65,7 @@ echo "Installing mysql-server"
 sudo apt install mysql-server
 echo "Mysql installed successfully!\n"
 
+default_dir=$PWD
 #creating database
 run_sql_commands $dbname $dbuname $dbpwd
 
@@ -83,6 +84,7 @@ sudo chown -R www-data: /var/www/html/$sitename
 
 
 #creating nginx site and updating nginx conf file
+cd $default_dir
 cp nginx.conf /tmp/$sitename
 sed -i "s/domain.tld/$sitename/g" /tmp/$sitename
 sed -i "s/vphp/$vphp/g" /tmp/$sitename    
